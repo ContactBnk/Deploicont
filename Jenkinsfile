@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-  //      stage('Init') {
-  //          steps {
-  //              echo "Stage d'Init  - jenkinsfile"
-  //          }
-  //      }
         stage('Build') {
             steps {
                 echo "Stage de Build  - jenkinsfile - lancement de mvn clean package "
@@ -18,11 +13,5 @@ pipeline {
                 }
             }
         }
- //       stage('Deploy') {
- //         steps {
- //             echo "Stage Deploy  - jenkinsfile"
- //         }
-        }
-        
     }
 }

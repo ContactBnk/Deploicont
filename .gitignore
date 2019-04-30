@@ -5,3 +5,4 @@
 #Maven
 log/
 target/*
+/Jenkinsfilev1.old
