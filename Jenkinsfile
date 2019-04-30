@@ -14,7 +14,7 @@ pipeline {
                     echo "Stage Build  - post success - archivage des artifacts..."
                     archiveArtifacts artifacts: '**/target/*.war'
                 }
-             }   
+            }   
         }
         stage('Deploy to test') {
               steps {
@@ -27,4 +27,5 @@ pipeline {
                   }
               }
           }
- }
+      }
+  }
