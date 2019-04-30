@@ -13,17 +13,18 @@ pipeline {
                 success {
                     echo "Stage Build  - post success - archivage des artifacts..."
                     archiveArtifacts artifacts: '**/target/*.war'
-            }
+                }
+             }   
         }
         stage('Deploy to test') {
-                  steps {
-                      echo "Stage de Deploy to test  - jenkinsfile"
-                      buid job : 'DeploiCont-MiseAJour'                
+              steps {
+                  echo "Stage de Deploy to test  - jenkinsfile"
+                  buid job : 'DeploiCont-MiseAJour'                
+              }
+              post {
+                  success {
+                      echo "Stage Build  - post success - DeploiCont-MiseAJour."
                   }
-                  post {
-                      success {
-                          echo "Stage Build  - post success - DeploiCont-MiseAJour."
-                      }
-                  }
+              }
           }
  }
