@@ -27,5 +27,20 @@ pipeline {
                   }
               }
           }
+       stage('Deploy to Production') {
+              steps {
+                  echo "Stage de Deploy to Production  - Timeout "
+                  timeout( time:5, unit:'DAYS') {
+                     input message : 'Approve Production deployment ?'
+                  }                
+                  build job : 'DeploiCont-MAJProd'                          
+              }
+              post {
+                  success {
+                      echo "Stage Build  - post success - DeploiCont-MAJProd."
+                  }
+              }
+          }
+
       }
   }
