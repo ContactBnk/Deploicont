@@ -16,6 +16,7 @@ public class HelloServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest requete, HttpServletResponse reponse) throws ServletException, IOException {
 		PrintWriter consoleServlet = reponse.getWriter();
 		consoleServlet = reponse.getWriter();
+		consoleServlet.println(" Servlet à Nono");
 	}
 
 	protected void doPost(HttpServletRequest requete, HttpServletResponse reponse) throws ServletException, IOException {
