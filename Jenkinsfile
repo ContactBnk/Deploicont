@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        maven 'JenkinsMaven'
+    }
     stages {
         stage('Build') {
             steps {
@@ -10,8 +13,17 @@ pipeline {
                 success {
                     echo "Stage Build  - post success - archivage des artifacts..."
                     archiveArtifacts artifacts: '**/target/*.war'
-                }
             }
         }
-    }
-}
+        stage('Deploy to test') {
+                  steps {
+                      echo "Stage de Deploy to test  - jenkinsfile"
+                      buid job : 'DeploiCont-MiseAJour'                
+                  }
+                  post {
+                      success {
+                          echo "Stage Build  - post success - DeploiCont-MiseAJour."
+                      }
+                  }
+          }
+ }
