@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy to test') {
               steps {
                   echo "Stage de Deploy to test  - jenkinsfile"
-                  buid job : 'DeploiCont-MiseAJour'                
+                  build job : 'DeploiCont-MiseAJour'                
               }
               post {
                   success {
